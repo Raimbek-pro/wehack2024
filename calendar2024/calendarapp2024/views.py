@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def main(request):
-    return render(request, 'main.html')
+    return render(request, 'calendarapp2024/main.html')
 
 def chatbot(request):
-    return render(request, 'chatbot_page.html')
+    return render(request, 'calendarapp2024/chatbot.html')
