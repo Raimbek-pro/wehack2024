@@ -44,6 +44,7 @@ window.onload = function() {
         }
     });
   }
+
 let dragged;
 
 document.addEventListener("drag", function(event) {}, false);

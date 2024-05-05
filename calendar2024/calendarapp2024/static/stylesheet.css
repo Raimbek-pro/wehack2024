@@ -5,17 +5,46 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
 }
-
 #main-container {
     display: flex;
     flex-direction: row;
     width: calc(100% - 40px); /* Subtracting 20px margin from both sides */
     height: calc(100vh - 40px); /* Subtracting 20px margin from top and bottom */
     margin: 20px;
+}
+#academic-year-week {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: 100%;
+    padding: 10px;
+}
+
+#academic-year, #week {
+    margin: 0 10px;
+}
+#academic-year select, #week select {
+    background-color: #3E3E42;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Add a shadow */
+}
+
+#academic-year select:focus, #week select:focus {
+    outline: none;
+    border: 2px solid #9D43BC; /* Add a border when focused */
 }
 
 #side-bar {
@@ -30,10 +59,10 @@ body {
 .title {
     font-size: 24px;
     font-weight: bold;
-    padding-top: 10px;
+    padding: 20px 0px 20px 0px;
     align-items: center;
     text-align: center;
-    border-radius: 16px 16px 0px 0px;
+    border-radius: 41px 41px 0px 0px;
     background-color: #4D4D51;
 }
 
@@ -41,7 +70,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #3E3E42;
-    border-radius: 0px 0px 16px 16px;   
+    border-radius: 0px 0px 41px 41px;   
     padding: 20px;
     gap: 10px;
 }
@@ -63,9 +92,7 @@ body {
     background-color: #3E3E42;
     margin-left: 20px;
     margin-top: 20px;
-    height: 80%; /* Add this line to make the schedule fill its parent's height */
-    justify-content: center; /* Add this line to center the grid horizontally */
-    align-items: center; /* Add this line to center the grid vertically */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .grid {
@@ -74,6 +101,7 @@ body {
     gap: 4px;
     background-color: #8C8C8C;
     width: 100%;
+    flex-grow: 1; /* Allow the grid to take up the remaining space in the #schedule div */
 }
 
 .grid > div {
