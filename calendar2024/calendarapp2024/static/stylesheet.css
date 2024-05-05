@@ -1,61 +1,87 @@
-/* CSS */
-#main-container {
-    display: flex;
-    flex-direction: column;
-}
-
 body {
     background-color: #1E1E1E;
     color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 40px); /* Subtracting 20px margin from both sides */
+    height: calc(100vh - 40px); /* Subtracting 20px margin from top and bottom */
+    margin: 20px;
+}
+
+#side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 15%; /* Adjust as needed */
+    padding: 20px;
+    margin-right: 20px;
+    height: 100%; /* Add this line to make the side-bar fill its parent's height */
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 10px;
+    align-items: center;
+    text-align: center;
+    border-radius: 16px 16px 0px 0px;
+    background-color: #4D4D51;
 }
 
 #courses {
-    width: 100%; /* This sets the width of #courses to 100% */
-    padding: 30px; /* This adds 30px of padding */
-    border-radius: 41px; /* This rounds the corners with a 41px radius */
+    display: flex;
+    flex-direction: column;
     background-color: #3E3E42;
-    margin-bottom: 20px; /* This adds 20px of space below #courses */
+    border-radius: 0px 0px 16px 16px;   
+    padding: 20px;
+    gap: 10px;
+}
+
+.course {
+    padding: 10px;
+    background-color: #9D43BC;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 
 #schedule {
-    width: 100%; /* This makes #schedule the same width as #courses */
-    padding: 30px; /* This adds 30px of padding */
-    border-radius: 41px; /* This rounds the corners with a 41px radius */
-    background-color: #3E3E42;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-}
-
-@media (min-width: 768px) {
-    #main-container {
-        flex-direction: row;
-    }
-
-    #courses {
-        width: 120px; /* This sets the width of #courses to 120px on screens wider than 768px */
-        margin-right: 20px; /* This adds 20px of space to the right of #courses on screens wider than 768px */
-        margin-bottom: 0; /* This removes the space below #courses on screens wider than 768px */
-    }
-
-    #schedule {
-        flex: 1; /* This makes #schedule take up the remaining space on screens wider than 768px */
-    }
+    padding: 20px;
+    border-radius: 41px;
+    background-color: #3E3E42;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 80%; /* Add this line to make the schedule fill its parent's height */
+    justify-content: center; /* Add this line to center the grid horizontally */
+    align-items: center; /* Add this line to center the grid vertically */
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 1 column for time + 5 columns for weekdays */
-    gap: 2px; /* Adjust this to change the thickness of the grid lines */
-    background-color: #8C8C8C; /* This will be the color of your grid lines */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    background-color: #8C8C8C;
+    width: 100%;
 }
 
 .grid > div {
-    background-color: #3E3E42; /* This will be the color of your grid cells */
-    border-radius: 5px; /* This will round the corners of your grid cells */
+    background-color: #3E3E42;
+    outline: none;    
 }
 
 .cell {
-    border: 1px solid black;
     padding: 10px;
     text-align: center;
 }

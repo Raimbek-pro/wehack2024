@@ -26,6 +26,23 @@ window.onload = function() {
         grid.appendChild(cell);
       }
     }
+    // Get the #courses div
+    const courses = document.querySelector('#courses');
+
+    // Allow dragged items to be moved over the #courses div
+    courses.addEventListener('dragover', function(event) {
+        event.preventDefault();
+    });
+
+    // Handle dropping a dragged item on the #courses div
+    courses.addEventListener('drop', function(event) {
+        event.preventDefault();
+        if (event.target.className === 'course') {
+            event.target.parentNode.appendChild(dragged);
+        } else {
+            event.target.appendChild(dragged);
+        }
+    });
   }
 let dragged;
 
@@ -51,10 +68,9 @@ document.addEventListener("dragover", function(event) {
 
 document.addEventListener("dragenter", function(event) {
   // highlight potential drop target when the draggable element enters it
-  if (event.target.className == "cell") {
+  if (event.target.className == "cell" && event.target.childNodes.length == 0) {
     event.target.style.background = "purple";
   }
-
 }, false);
 
 document.addEventListener("dragleave", function(event) {
