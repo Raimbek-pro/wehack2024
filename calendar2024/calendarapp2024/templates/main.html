@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Main Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/stylesheet.css">
 </head>
 <body>
-    <h1>Welcome to the Main Page</h1>
-    <a href="{% url 'chatbot' %}">Go to Same Page</a>
+    <!-- HTML -->
+    <div id="main-container">
+        <div id="courses">
+            <div class="course" draggable="true">Course 1</div>
+            <div class="course" draggable="true">Course 2</div>
+            <!-- More courses go here -->
+        </div>
+
+        <div id="schedule">
+            <div id="weekdays"></div>
+            <div id="times"></div>
+            <div class="grid">
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/scripts.js"></script>
 </body>
 </html>

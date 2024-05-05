@@ -1,0 +1,39 @@
+/* CSS */
+#main-container {
+    display: flex;
+}
+
+body {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+}
+
+#courses, #schedule {
+    flex: 1; /* This makes #courses and #schedule the same length */
+    padding: 30px; /* This adds 30px of padding */
+    border-radius: 41px; /* This rounds the corners with a 41px radius */
+    background-color: #3E3E42;
+}
+
+#schedule {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 1 column for time + 5 columns for weekdays */
+    gap: 2px; /* Adjust this to change the thickness of the grid lines */
+    background-color: #8C8C8C; /* This will be the color of your grid lines */
+}
+
+.grid > div {
+    background-color: #3E3E42; /* This will be the color of your grid cells */
+    border-radius: 5px; /* This will round the corners of your grid cells */
+}
+
+.cell {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
