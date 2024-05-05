@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание</title>
+    <link rel="stylesheet" href="../../../static/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="academic-year-week">
+        <div id="academic-year">
+            <select id="year-select">
+                <script>
+                    for (let i = 2026; i > 2016; i--) {
+                        document.write(`<option value="${i}-${i+1}">${i}-${i+1}</option>`);
+                    }
+                </script>
+            </select>
+        </div>
+            <!-- <div id="week">
+                <select id="week-select">
+                    <script>
+                        for (let i = 1; i <= 15; i++) {
+                            document.write(`<option value="Week ${i}">Week ${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div> -->
+        <div id="exams">
+            <a href="main.html"><button id="exam-button">Расписание</button></a>
+        </div>
+        <div id="language">
+            <select id="language-select">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="kz">Қазақша</option>
+            </select>
+        </div>
+    </div>
+    <div id="main-container">
+        <div id="side-bar">
+            <div class="title">
+                <div>Exams</div>
+            </div>
+            <div id="courses">
+                <div class="course" draggable="true">LAN161<br>Джон Доу</div>
+                <div class="course" draggable="true">HUM1307<br>Джон Доу</div>
+                <div class="course" draggable="true">LAN1185<br>Джон Доу</div>
+                <div class="course" draggable="true">MATH1102<br>Джон Доу</div>
+                <div class="course" draggable="true">CSCI1103<br>Джон Доу</div>
+                <div class="course" draggable="true">CSCI1103<br>Джон Доу</div>
+                <div class="course" draggable="true">FUN1201<br>Джон Доу</div>
+                <div class="course" draggable="true">FUN1201<br>Джон Доу</div>
+                <!-- More courses go here -->
+            </div>
+        </div>
+        
+
+        <div id="schedule">
+            <div id="weekdays"></div>
+            <div id="times"></div>
+            <div class="grid">
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../static/scripts.js">    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script> 
+    <script src="https://mediafiles.botpress.cloud/2a719d7c-4ec1-4b1d-8888-dc7702b2e16f/webchat/config.js" defer></script>
+</body>
+</html>

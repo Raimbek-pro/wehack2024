@@ -1,7 +1,19 @@
 // JavaScript
 window.onload = function() {
     const grid = document.querySelector('.grid');
-    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const days_EN = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    const days_RU = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'];
+    const days_KZ = ['Дүйсенбі', 'Сейсенбі', 'Сәрсенбі', 'Бейсенбі', 'Жұма'];
+
+    let days;
+    if (window.location.href.includes('RU')) {
+        days = days_RU;
+    } else if (window.location.href.includes('KZ')) {
+        days = days_KZ;
+    } else {
+        days = days_EN;
+    }
+
     const hours = Array.from({length: 15}, (_, i) => i + 8); // generates hours from 8 to 22
   
     // Create the first row with days of the week
@@ -12,6 +24,8 @@ window.onload = function() {
       cell.className = 'cell';
       grid.appendChild(cell);
     }
+
+
   
     // Create the rest of the grid
     for (let hour of hours) {
@@ -44,6 +58,17 @@ window.onload = function() {
         }
     });
   }
+
+document.getElementById('language-select').addEventListener('change', function() {
+  const language = this.value;
+  if (language === 'ru') {
+      window.location.href = '../RU/main.html'; // Replace with the URL of the Russian version
+  } else if (language === 'kz') {
+      window.location.href = '../KZ/main.html'; // Replace with the URL of the Kazakh version
+  } else {
+      window.location.href = '../EN/main.html'; // Replace with the URL of the English version
+  }
+});
 
 let dragged;
 
