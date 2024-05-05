@@ -97,6 +97,23 @@ a {
     top: 20px;
     
 }
+#mode-toggle {
+    background-color: #9D43BC; /* Same as #exam-button */
+    color: #FFFFFF; /* Same as body */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px; /* Same as #exam-button */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Same as #exam-button */
+    width: 100%; /* Same as #exam-button */
+    height: 100%; /* Same as #exam-button */
+}
 .select-style, #language-select {
     /* Your existing select box styles go here. For example: */
     padding: 10px;

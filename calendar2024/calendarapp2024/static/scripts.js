@@ -58,7 +58,16 @@ window.onload = function() {
         }
     });
   }
-
+document.getElementById('mode-toggle').addEventListener('click', function() {
+  const stylesheetLink = document.querySelector('link[href*="stylesheet"]');
+  const currentMode = stylesheetLink.href.includes('light') ? 'light' : 'dark';
+  const newMode = currentMode === 'light' ? 'dark' : 'light';
+  // Switch the stylesheet
+  stylesheetLink.href = stylesheetLink.href.replace(currentMode, newMode);
+  // Update the button text and icon
+  this.textContent = newMode === 'light' ? 'Dark Mode' : 'Light Mode';
+  // Add code here to change the button icon
+});
 document.getElementById('language-select').addEventListener('change', function() {
   const language = this.value;
   if (language === 'ru') {

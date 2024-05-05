@@ -1,0 +1,175 @@
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+#main-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr; /* Adjust as needed */
+    width: 100%;
+    height: 90vh;
+    margin: 20px;
+    box-sizing: border-box;
+    grid-gap: 10px;
+}
+#academic-year-week {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: 100%;
+    padding: 10px;
+}
+#mode-toggle {
+    background-color: #FF8686; /* Same as #exam-button */
+    color: #000000; /* Same as #exam-button */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px; /* Same as #exam-button */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Same as #exam-button */
+    width: 100%; /* Same as #exam-button */
+    height: 100%; /* Same as #exam-button */
+}
+
+#academic-year, #week, #exams {
+    margin: 0 10px;
+}
+#exams{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+a {
+    width: 100%;
+    height: 100%;
+}
+#exam-button {
+    background-color: #FF8686;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Add a shadow */
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+#academic-year select, #week select {
+    background-color: #FF8686;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* Add a shadow */
+}
+
+#academic-year select:focus, #week select:focus {
+    outline: none;
+    border: 2px solid #FF8686; /* Add a border when focused */
+}
+
+#side-bar {
+    display: flex;
+    flex-direction: column;
+    width: 80%; /* Adjust as needed */
+    padding: 20px;
+    margin-right: 20px;
+    height: 100%; /* Add this line to make the side-bar fill its parent's height */
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 0px 20px 0px;
+    align-items: center;
+    text-align: center;
+    border-radius: 41px 41px 0px 0px;
+    background-color: #B2B2B2;
+}
+#language {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    
+}
+.select-style, #language-select {
+    /* Your existing select box styles go here. For example: */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+
+#courses {
+    display: flex;
+    flex-direction: column;
+    background-color: #D6D6DA;
+    border-radius: 0px 0px 41px 41px;   
+    padding: 20px;
+    gap: 10px;
+    min-height: 200px;
+}
+
+.course {
+    padding: 10px;
+    background-color: #FF8686;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#schedule {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 41px;
+    background-color: #D6D6DA;
+    margin-right: 20px;
+    margin-top: 20px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    background-color: #8C8C8C;
+    width: 100%;
+    flex-grow: 1; /* Allow the grid to take up the remaining space in the #schedule div */
+}
+
+.grid > div {
+    background-color: #D6D6DA;
+    outline: none;    
+}
+
+.cell {
+    padding: 10px;
+    text-align: center;
+}
