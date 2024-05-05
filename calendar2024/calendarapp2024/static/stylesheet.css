@@ -1,6 +1,7 @@
 /* CSS */
 #main-container {
     display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -8,16 +9,37 @@ body {
     color: #FFFFFF;
 }
 
-#courses, #schedule {
-    flex: 1; /* This makes #courses and #schedule the same length */
+#courses {
+    width: 100%; /* This sets the width of #courses to 100% */
     padding: 30px; /* This adds 30px of padding */
     border-radius: 41px; /* This rounds the corners with a 41px radius */
     background-color: #3E3E42;
+    margin-bottom: 20px; /* This adds 20px of space below #courses */
 }
 
 #schedule {
+    width: 100%; /* This makes #schedule the same width as #courses */
+    padding: 30px; /* This adds 30px of padding */
+    border-radius: 41px; /* This rounds the corners with a 41px radius */
+    background-color: #3E3E42;
     display: flex;
     flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    #main-container {
+        flex-direction: row;
+    }
+
+    #courses {
+        width: 120px; /* This sets the width of #courses to 120px on screens wider than 768px */
+        margin-right: 20px; /* This adds 20px of space to the right of #courses on screens wider than 768px */
+        margin-bottom: 0; /* This removes the space below #courses on screens wider than 768px */
+    }
+
+    #schedule {
+        flex: 1; /* This makes #schedule take up the remaining space on screens wider than 768px */
+    }
 }
 
 .grid {
